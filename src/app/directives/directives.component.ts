@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DirectivesComponent implements OnInit {
   title: any;
-  name : any;
+  name : string = "";
+  username : string = "";
   ngOnInit(): void {}
 
   changeTitle() {
