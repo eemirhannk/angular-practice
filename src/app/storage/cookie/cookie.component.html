@@ -1,1 +1,16 @@
-<p>cookie works!</p>
+<div class="row m-5">
+    <div class="col-md-5">
+        <input type="text" [(ngModel)]="name"/> <br>
+        <button (click)="setItem(name)">Set Item</button>
+        <button (click)="getItem()">Get Item</button>
+        <button (click)="clearItem()">Clear Item</button>
+        <button (click)="clearAll()">Clear All</button>
+        <button (click)="checkNameCookie()">Check Name Cookie</button>
+        <p>name : {{name}}</p>
+        <p>cookie value : {{cookieValue}}</p>
+        <p>is Exist : {{isCookieExist}}</p>
+    </div>
+  <div class="col-md-2">
+    <button routerLink="../local-storage">Go to Local Storage Page</button>
+  </div>
+</div>
