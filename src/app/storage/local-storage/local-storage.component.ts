@@ -1,10 +1,51 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-local-storage',
   templateUrl: './local-storage.component.html',
-  styleUrls: ['./local-storage.component.scss']
+  styleUrls: ['./local-storage.component.scss'],
 })
-export class LocalStorageComponent {
+export class LocalStorageComponent implements OnInit {
+  name = '';
+  localStorageVal: any;
+  localStorageObjVal: any;
 
+  objName = '';
+  objSurname = '';
+  objAge = '';
+
+  constructor() {}
+  ngOnInit(): void {
+
+  }
+
+  setItem(value: any) {
+    localStorage.setItem('name', value);
+  }
+
+  getItem() {
+    this.localStorageVal = localStorage.getItem('name');
+  }
+
+  clearItem() {
+    localStorage.removeItem('name');
+    this.localStorageVal = '';
+  }
+
+  clearAll() {
+    localStorage.clear();
+  }
+
+  setObject() {
+    const obj = {
+      name: this.objName,
+      surname: this.objSurname,
+      age: this.objAge,
+    };
+    localStorage.setItem('object', JSON.stringify(obj));
+  }
+  
+  getObject() {
+    this.localStorageObjVal = localStorage.getItem("object");
+  }
 }

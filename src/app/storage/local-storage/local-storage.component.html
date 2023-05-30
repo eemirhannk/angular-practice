@@ -1,1 +1,20 @@
-<p>local-storage works!</p>
+<div class="row m-5">
+    <div class="col-md-5">
+        <input type="text" [(ngModel)] = "name"/>
+        <br>
+        <button (click)="setItem(name)">Set Item</button>
+        <button (click)="getItem()">Get Item</button>
+        <button (click)="clearItem()">Clear Item</button>
+        <p>ng model : {{name}}</p>
+        <p>Local Storage value : {{localStorageVal}}</p>
+    </div>
+    <div class="col-md-6">
+       name: <input type="text" [(ngModel)] = "objName"> <br>
+       surname: <input type="text" [(ngModel)] = "objSurname"> <br>
+       age: <input type="text" [(ngModel)] = "objAge"> <br>
+       <button (click)="setObject()">Set Object</button>
+       <button (click)="getObject()">Get Object</button>
+       <br>
+       obj value : {{localStorageObjVal}}
+    </div>
+</div>
